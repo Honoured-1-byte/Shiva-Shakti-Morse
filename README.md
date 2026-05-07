@@ -1,3 +1,4 @@
+--Markdown--
 # 🕉️ Shiva-Shakti Morse Code: Devanagari Huffman Compression
 
 This project explores the intersection of Information Theory, Data Structures, and Ancient Linguistics. It processes over **100,000 verses** of sacred Indian texts to mathematically determine the frequency distribution of the Devanagari script, compressing the language into a custom, prefix-free binary encoding (a "Sanskrit Morse Code").
@@ -30,3 +31,25 @@ Encode any Devanagari string into the new Shiva-Shakti Morse code, or decode bac
 ```bash
 g++ translator.cpp -o translator
 ./translator
+2. Build the Tree & Generate Codes
+To run the full algorithm and rebuild the tree from the sample corpus:
+
+Bash
+g++ shiva_shakti_tree.cpp -o shiva_tree -O3
+./shiva_tree
+Outputs: shiva_shakti_codes.txt (dictionary) and shiva_shakti_tree.dot (visual map).
+
+3. Visualize the Algorithm
+Copy the contents of shiva_shakti_tree.dot and paste them into WebGraphviz to see the language hierarchy.
+
+📝 Example Output
+The algorithm awarding the Halant (्) the shortest code (-..) due to its high structural frequency:
+
+य: ..---
+
+श: .--..-
+
+यश: ..--- .--..-
+
+🙏 Acknowledgments & Data Source
+The raw Sanskrit and Awadhi verses were sourced from the DharmicData repository. This project utilizes their compiled JSON datasets under the Open Database License (ODbL).
