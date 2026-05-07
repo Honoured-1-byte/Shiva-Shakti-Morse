@@ -1,55 +1,198 @@
---Markdown--
+````md
 # 🕉️ Shiva-Shakti Morse Code: Devanagari Huffman Compression
 
-This project explores the intersection of Information Theory, Data Structures, and Ancient Linguistics. It processes over **100,000 verses** of sacred Indian texts to mathematically determine the frequency distribution of the Devanagari script, compressing the language into a custom, prefix-free binary encoding (a "Sanskrit Morse Code").
+This project explores the intersection of Information Theory, Data Structures, and Ancient Linguistics. It processes over **100,000 verses** of sacred Indian texts to mathematically determine the frequency distribution of the Devanagari script, compressing the language into a custom, prefix-free binary encoding — a Sanskrit-inspired Morse system.
 
-## 🧠 The "Shiva-Shakti" Concept
-Unlike standard Huffman coding which arbitrarily assigns `0` (left) and `1` (right) to tree branches, this algorithm applies a philosophical constraint based on Sanskrit linguistics:
-* **Shiva (Consciousness / Vowels):** All independent vowels and *matras* are strictly routed to the **Left** branches (represented by a Dot `.`).
-* **Shakti (Energy / Consonants):** All base consonants are strictly routed to the **Right** branches (represented by a Dash `-`).
+---
 
-The result is a mathematically optimized tree where the most frequently used structural elements have the shortest codes.
+# 🧠 The Shiva–Shakti Principle
 
-## 📊 The Dataset
-The text corpus was extracted from a structured JSON dataset containing:
-* The Rigveda, Yajurveda, and Atharvaveda
-* Srimad Bhagavad Gita
-* Valmiki Ramayana & Ramcharitmanas
-* The Mahabharata
+Traditional Huffman Coding arbitrarily assigns:
 
-*(Note: To keep this repository lightweight, the massive JSON directories have been omitted. A `sample_corpus.txt` is included for testing.)*
+- `0` → Left branch
+- `1` → Right branch
 
-## 🛠️ Tech Stack
-* **Node.js:** Recursive JSON parsing.
-* **C++:** UTF-8 byte parsing, O(1) Hash Mapping, and O(n log n) Min-Heap tree building.
-* **Graphviz:** Visual SVG/DOT map generation.
+This project introduces a philosophical and linguistic constraint inspired by Sanskrit metaphysics:
 
-## 🚀 How to Run the Project
+| Concept | Symbolism | Routing | Representation |
+|---|---|---|---|
+| **Shiva** | Consciousness / Vowels | Left Branch | `.` (Dot) |
+| **Shakti** | Energy / Consonants | Right Branch | `-` (Dash) |
 
-### 1. The C++ Translator
-Encode any Devanagari string into the new Shiva-Shakti Morse code, or decode back into Sanskrit!
+### Encoding Rules
+
+- Independent vowels (`अ आ इ ई ...`) and vowel modifiers (*matras*) are preferentially routed toward **Shiva paths**.
+- Consonants (`क ख ग घ ...`) are preferentially routed toward **Shakti paths**.
+- The generated tree remains:
+  - Prefix-free
+  - Frequency-optimized
+  - Deterministic
+  - Decodable
+
+The result is a mathematically compressed symbolic representation of Sanskrit phonetics.
+
+---
+
+# 📊 Corpus & Dataset
+
+The frequency model is built using a large-scale textual corpus extracted from structured JSON datasets containing:
+
+- Rigveda
+- Yajurveda
+- Atharvaveda
+- Srimad Bhagavad Gita
+- Valmiki Ramayana
+- Ramcharitmanas
+- Mahabharata
+
+The system parses and aggregates over **100,000 verses** written in Devanagari.
+
+> To keep the repository lightweight, the original JSON corpus is omitted.  
+> A smaller `sample_corpus.txt` is included for testing and experimentation.
+
+---
+
+# ⚙️ Core Features
+
+- UTF-8 Devanagari parsing
+- Character frequency analysis
+- Custom constrained Huffman Tree construction
+- Prefix-free Sanskrit Morse generation
+- Bidirectional translation:
+  - Sanskrit → Shiva-Shakti Morse
+  - Shiva-Shakti Morse → Sanskrit
+- DOT/SVG tree visualization support
+- O(1) Unicode hash mapping
+- O(n log n) Min-Heap optimization
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Node.js** | Recursive JSON extraction & preprocessing |
+| **C++** | Huffman engine, UTF-8 parsing, encoding/decoding |
+| **Graphviz** | Tree visualization generation |
+
+---
+
+# 📂 Project Structure
+
+```text
+.
+├── translator.cpp
+├── shiva_shakti_tree.cpp
+├── sample_corpus.txt
+├── shiva_shakti_codes.txt
+├── shiva_shakti_tree.dot
+└── README.md
+````
+
+---
+
+# 🚀 How to Run
+
+## 1️⃣ Compile the Translator
+
+Encode or decode Devanagari text using the generated Shiva-Shakti Morse system.
+
 ```bash
 g++ translator.cpp -o translator
 ./translator
-2. Build the Tree & Generate Codes
-To run the full algorithm and rebuild the tree from the sample corpus:
+```
 
-Bash
+---
+
+## 2️⃣ Build the Huffman Tree
+
+Generate the frequency table, optimized tree, and encoding dictionary.
+
+```bash
 g++ shiva_shakti_tree.cpp -o shiva_tree -O3
 ./shiva_tree
-Outputs: shiva_shakti_codes.txt (dictionary) and shiva_shakti_tree.dot (visual map).
+```
 
-3. Visualize the Algorithm
-Copy the contents of shiva_shakti_tree.dot and paste them into WebGraphviz to see the language hierarchy.
+### Generated Outputs
 
-📝 Example Output
-The algorithm awarding the Halant (्) the shortest code (-..) due to its high structural frequency:
+| File                     | Purpose                      |
+| ------------------------ | ---------------------------- |
+| `shiva_shakti_codes.txt` | Character → Morse dictionary |
+| `shiva_shakti_tree.dot`  | Graphviz tree structure      |
 
-य: ..---
+---
 
-श: .--..-
+## 3️⃣ Visualize the Language Hierarchy
 
-यश: ..--- .--..-
+Paste the contents of:
 
-🙏 Acknowledgments & Data Source
-The raw Sanskrit and Awadhi verses were sourced from the DharmicData repository. This project utilizes their compiled JSON datasets under the Open Database License (ODbL).
+```text
+shiva_shakti_tree.dot
+```
+
+into a Graphviz renderer such as WebGraphviz to visualize the Shiva-Shakti hierarchy.
+
+---
+
+# 📝 Example Encoding
+
+The algorithm assigns shorter codes to structurally frequent symbols.
+
+Example:
+
+```text
+य    : ..---
+श    : .--..-
+यश   : ..--- .--..-
+```
+
+Interestingly, the **Halant (्)** often receives one of the shortest encodings because of its extremely high structural frequency in Sanskrit word formation.
+
+---
+
+# 🧪 Algorithmic Insight
+
+This project combines:
+
+* Huffman Coding
+* Unicode Processing
+* Information Theory
+* Sanskrit Phonetics
+* Symbolic Linguistics
+
+The tree is not merely statistical — it embeds a directional semantic constraint inspired by the Shiva–Shakti duality.
+
+---
+
+# 🔮 Future Possibilities
+
+Potential extensions include:
+
+* Sanskrit speech compression
+* Phonetic entropy analysis
+* AI tokenization research
+* Sanskrit-aware NLP pipelines
+* Devanagari symbolic transmission systems
+* Real-time chanting compression
+* Audio-to-symbol encoding
+
+---
+
+# 🙏 Acknowledgments
+
+The Sanskrit and Awadhi textual datasets were sourced from the **DharmicData** repository.
+
+This project uses their compiled datasets under the **Open Database License (ODbL)**.
+
+Special respect to the preservation efforts surrounding Bharatiya linguistic and scriptural heritage.
+
+---
+
+# 📜 License
+
+This project is intended for educational, research, and experimental purposes.
+
+Please respect the licenses associated with all upstream textual datasets.
+
+```
+```
