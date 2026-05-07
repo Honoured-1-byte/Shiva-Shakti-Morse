@@ -1,8 +1,18 @@
-# Ignore Executables
+# Ignore Windows Executables
 *.exe
+
+# Ignore the massive downloaded JSON folders (if you put them inside your project)
+Rigveda/
+Yajurveda/
+Atharvaveda/
+SrimadBhagvadGita/
+ValmikiRamayana/
+Ramcharitmanas/
+Mahabharata/
 
 # Ignore massive generated text files
 master_devanagari_corpus.txt
 shiva_shakti_codes.txt
 
-# (Optional) You can keep the .dot file to show the graph code!
+# Node modules (if you initialized npm)
+node_modules/
