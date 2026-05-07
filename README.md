@@ -1,4 +1,4 @@
-````md
+
 # 🕉️ Shiva-Shakti Morse Code: Devanagari Huffman Compression
 
 This project explores the intersection of Information Theory, Data Structures, and Ancient Linguistics. It processes over **100,000 verses** of sacred Indian texts to mathematically determine the frequency distribution of the Devanagari script, compressing the language into a custom, prefix-free binary encoding — a Sanskrit-inspired Morse system.
@@ -19,7 +19,7 @@ This project introduces a philosophical and linguistic constraint inspired by Sa
 | **Shiva** | Consciousness / Vowels | Left Branch | `.` (Dot) |
 | **Shakti** | Energy / Consonants | Right Branch | `-` (Dash) |
 
-### Encoding Rules
+## Encoding Rules
 
 - Independent vowels (`अ आ इ ई ...`) and vowel modifiers (*matras*) are preferentially routed toward **Shiva paths**.
 - Consonants (`क ख ग घ ...`) are preferentially routed toward **Shakti paths**.
@@ -47,7 +47,7 @@ The frequency model is built using a large-scale textual corpus extracted from s
 
 The system parses and aggregates over **100,000 verses** written in Devanagari.
 
-> To keep the repository lightweight, the original JSON corpus is omitted.  
+> To keep the repository lightweight, the original JSON corpus is omitted.
 > A smaller `sample_corpus.txt` is included for testing and experimentation.
 
 ---
@@ -174,7 +174,6 @@ Potential extensions include:
 * Sanskrit-aware NLP pipelines
 * Devanagari symbolic transmission systems
 * Real-time chanting compression
-* Audio-to-symbol encoding
 
 ---
 
@@ -192,7 +191,4 @@ Special respect to the preservation efforts surrounding Bharatiya linguistic and
 
 This project is intended for educational, research, and experimental purposes.
 
-Please respect the licenses associated with all upstream textual datasets.
-
-```
-```
+Please respect the licenses associ
