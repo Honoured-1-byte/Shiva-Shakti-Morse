@@ -1,0 +1,8 @@
+# Ignore Executables
+*.exe
+
+# Ignore massive generated text files
+master_devanagari_corpus.txt
+shiva_shakti_codes.txt
+
+# (Optional) You can keep the .dot file to show the graph code!
