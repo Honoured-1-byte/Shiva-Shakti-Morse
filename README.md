@@ -48,3 +48,6 @@ The algorithm mathematically proves the efficiency of Sanskrit morphology. For e
 श: -....-
 
 यश: ..-.- -....-
+
+## 🙏 Acknowledgments & Data Source
+The raw Sanskrit and Awadhi verses used to generate the frequency distributions for this algorithm were sourced from the excellent [DharmicData repository](https://github.com/bhavykhatri/DharmicData) by bhavykhatri. This project utilizes their compiled JSON datasets of Hindu sacred texts under the Open Database License (ODbL).
